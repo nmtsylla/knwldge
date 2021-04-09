@@ -3,15 +3,19 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-import Rails from "@rails/ujs";
-import Turbolinks from "turbolinks";
-import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 import "bootstrap";
-require("trix")
-require("@rails/actiontext")
+
+import "@hotwired/turbo-rails"
+import * as ActiveStorage from "@rails/activestorage";
+
+import Rails from "@rails/ujs";
+Rails.start();
+ActiveStorage.start();
+
+require("trix");
+require("@rails/actiontext");
 require("packs/amdesk.js");
 require("packs/amdesk-init.js");
-Rails.start();
-Turbolinks.start();
-ActiveStorage.start();
+
+import "controllers"
