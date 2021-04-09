@@ -1,9 +1,10 @@
   <div class="qestions-list mode-grid">
     <div class="clearfix">
+
       <%= turbo_stream_from "questions" %>
 
       <%= turbo_frame_tag "questions" do %>
       <%= render @session.questions %>
       <% end %>
-      <%
-  </div>
+
+    </div>

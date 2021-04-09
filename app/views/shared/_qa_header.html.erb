@@ -7,10 +7,9 @@
     <div class="row justify-content-center">
       <div class="col-xl-7">
         <h1 class="h2 mb-30 text-white text-center">Vous avez une question?</h1>
-        <form action="#" class="dx-form dx-form-group-inputs">
-          <input type="text" name="" value="" class="form-control" placeholder="Veuillez la saisir ici..." />
-          <button class="dx-btn dx-btn-lg">Soumettre</button>
-        </form>
+        <%= turbo_frame_tag "question_form" do %>
+        <%= render "questions/form", question: @question %>
+        <% end %>
       </div>
     </div>
   </div>
