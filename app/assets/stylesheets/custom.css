@@ -1,0 +1,109 @@
+/* PLACE YOU CUSTOM STYLES IN THIS FILE */
+/* PLACE YOU CUSTOM STYLES IN THIS FILE */
+.questions-list {
+  margin: 0 auto;
+}
+.qestions-list-item {
+  position: relative;
+  margin: 10px;
+  margin-bottom: 30px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.78);
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.mode-grid .qestions-list-item {
+  width: 230px;
+  height: 230px;
+  float: left;
+}
+
+.mode-grid .qestions-list-item .scroller {
+  overflow: auto;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+  max-height: 230px;
+  max-width: 230px;
+  word-wrap: break-word;
+  padding: 10px;
+}
+
+.mode-list .qestions-list-item {
+  margin-bottom: 40px;
+  padding: 10px;
+}
+
+.slideshow .qestions-list-item {
+  border-radius: 8px !important;
+}
+
+.qestions-list-item.bar-visible {
+  border-radius: 8px 8px 0 0;
+}
+
+.qestions-list-item a,
+.qestions-list-item a:visited {
+  color: #333333;
+  text-decoration: underline;
+  font-size: 0.9em;
+}
+
+.qestions-list-item:hover,
+.qestions-list-item a:hover,
+.qestions-list-item a:active,
+.qestions-list-item a:visited:hover,
+.qestions-list-item a:visited:active {
+  color: #4d4d4d;
+  background-color: #fff;
+}
+
+.qestions-list-item .liked {
+  color: #e57070;
+}
+
+@media screen and (min-width: 560px) and(min-height: 560px) {
+  .slideshow .qestions-list-item {
+    width: 460px;
+    height: 460px;
+    font-size: 32px;
+    margin: 0;
+  }
+
+  .slideshow .qestions-list-item .scroller {
+    max-height: 460px;
+    max-width: 460px;
+    padding: 20px;
+  }
+}
+
+.slideshow .qestions-list-item .likes-bar {
+  color: white;
+}
+
+.qestions-list-item .button-bar {
+  background: #c1c1c1;
+  position: absolute;
+  bottom: -31px;
+  left: 0px;
+  height: 31px;
+  width: 100%;
+  line-height: 31px;
+  padding-left: 0.5em;
+  border-radius: 0 0 8px 8px;
+}
+
+.qestions-list-item .button-bar .btn {
+  width: 31px;
+  border-radius: 0 0 8px 0;
+}
+
+.qestions-list-item.selected .button-bar {
+  background: #dbdbdb;
+}
+
+.turbo-progress-bar {
+  height: 5px;
+  background-color: green;
+}
