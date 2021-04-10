@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_09_181113) do
+ActiveRecord::Schema.define(version: 2021_04_10_115354) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -50,6 +50,40 @@ ActiveRecord::Schema.define(version: 2021_04_09_181113) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "article_hierarchies", id: false, force: :cascade do |t|
+    t.integer "ancestor_id", null: false
+    t.integer "descendant_id", null: false
+    t.integer "generations", null: false
+    t.index ["ancestor_id", "descendant_id", "generations"], name: "article_anc_desc_idx", unique: true
+    t.index ["descendant_id"], name: "article_desc_idx"
+  end
+
+  create_table "articles", force: :cascade do |t|
+    t.string "name"
+    t.integer "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "parent_id"
+    t.integer "sort_order"
+    t.index ["category_id"], name: "index_articles_on_category_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "parent_id"
+    t.integer "sort_order"
+  end
+
+  create_table "category_hierarchies", id: false, force: :cascade do |t|
+    t.integer "ancestor_id", null: false
+    t.integer "descendant_id", null: false
+    t.integer "generations", null: false
+    t.index ["ancestor_id", "descendant_id", "generations"], name: "category_anc_desc_idx", unique: true
+    t.index ["descendant_id"], name: "category_desc_idx"
+  end
+
   create_table "questions", force: :cascade do |t|
     t.string "title"
     t.integer "session_id", null: false
@@ -68,5 +102,6 @@ ActiveRecord::Schema.define(version: 2021_04_09_181113) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "articles", "categories"
   add_foreign_key "questions", "sessions"
 end
