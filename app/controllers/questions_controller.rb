@@ -1,9 +1,9 @@
 class QuestionsController < ApplicationController
-  layout 'sessions_qa'
+  layout "sessions_qa"
   before_action :set_question, only: %i[ edit update destroy ]
   before_action :set_session, only: %i[new create]
 
-  def new 
+  def new
     @question = @session.questions.new
   end
 
@@ -48,17 +48,18 @@ class QuestionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_question
-      @question = Question.find(params[:id])
-    end
 
-    def set_session
-      @session = Session.find(params[:session_id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_question
+    @question = Question.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def question_params
-      params.require(:question).permit(:content)
-    end
+  def set_session
+    @session = Session.find(params[:session_id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def question_params
+    params.require(:question).permit(:content)
+  end
 end

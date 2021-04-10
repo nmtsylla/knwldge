@@ -5,17 +5,17 @@
 
 import "channels";
 import "bootstrap";
+import "@hotwired/turbo-rails";
+import "packs/amdesk.js";
+import "packs/amdesk-init.js";
+import "controllers";
 
-import "@hotwired/turbo-rails"
 import * as ActiveStorage from "@rails/activestorage";
 
 import Rails from "@rails/ujs";
+
 Rails.start();
 ActiveStorage.start();
 
 require("trix");
 require("@rails/actiontext");
-require("packs/amdesk.js");
-require("packs/amdesk-init.js");
-
-import "controllers"

@@ -7,24 +7,21 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700%7cMaven+Pro:400,500,700" %>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
+  <%= stylesheet_link_tag "application", media: "all", 'data-turbo-track': "reload" %>
+  <%= javascript_pack_tag "application", 'data-turbo-track': "reload", 'defer': 'defer' %>
 </head>
 
 <body>
 
   <%= render "shared/navbar" %>
   <div class="dx-main">
-    <%= render 'shared/header' %>
+    <%= render "shared/header" %>
     <div class="dx-box-5 pb-100 bg-grey-6">
       <div class="container"><%= yield %></div>
     </div>
     <%= render "shared/footer" %>
   </div>
 
-
 </body>
-
-<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 </html>
