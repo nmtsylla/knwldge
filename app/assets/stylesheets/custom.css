@@ -1,5 +1,3 @@
-/* PLACE YOU CUSTOM STYLES IN THIS FILE */
-/* PLACE YOU CUSTOM STYLES IN THIS FILE */
 .questions-list {
   margin: 0 auto;
 }
@@ -7,8 +5,8 @@
   position: relative;
   margin: 10px;
   margin-bottom: 30px;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.78);
+  color: #fdfffc;
+  background-color: #011627;
   border-radius: 8px;
   font-size: 16px;
 }
@@ -56,7 +54,7 @@
 .qestions-list-item a:visited:hover,
 .qestions-list-item a:visited:active {
   color: #4d4d4d;
-  background-color: #fff;
+  background-color: #fdfffc;
 }
 
 .qestions-list-item .liked {
