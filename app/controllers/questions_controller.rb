@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
   layout 'sessions_qa'
   before_action :set_question, only: %i[ edit update destroy ]
-  before_action :set_session#, only: %i[new create]
+  before_action :set_session, only: %i[new create]
 
   def new 
     @question = @session.questions.new
@@ -59,6 +59,6 @@ class QuestionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def question_params
-      params.require(:question).permit(:title)
+      params.require(:question).permit(:content)
     end
 end
