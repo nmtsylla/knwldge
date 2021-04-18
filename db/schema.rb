@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_04_10_162736) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -25,8 +28,8 @@ ActiveRecord::Schema.define(version: 2021_04_10_162736) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
-    t.integer "record_id", null: false
-    t.integer "blob_id", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
@@ -45,7 +48,7 @@ ActiveRecord::Schema.define(version: 2021_04_10_162736) do
   end
 
   create_table "active_storage_variant_records", force: :cascade do |t|
-    t.integer "blob_id", null: false
+    t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
@@ -58,11 +61,25 @@ ActiveRecord::Schema.define(version: 2021_04_10_162736) do
     t.index ["descendant_id"], name: "article_desc_idx"
   end
 
-# Could not dump table "articles" because of following StandardError
-#   Unknown type 'title' for column 'slug'
+  create_table "articles", force: :cascade do |t|
+    t.string "name"
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "parent_id"
+    t.integer "sort_order"
+    t.string "slug"
+    t.index ["category_id"], name: "index_articles_on_category_id"
+  end
 
-# Could not dump table "categories" because of following StandardError
-#   Unknown type 'title' for column 'slug'
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "parent_id"
+    t.integer "sort_order"
+    t.string "slug"
+  end
 
   create_table "category_hierarchies", id: false, force: :cascade do |t|
     t.integer "ancestor_id", null: false
@@ -74,7 +91,7 @@ ActiveRecord::Schema.define(version: 2021_04_10_162736) do
 
   create_table "questions", force: :cascade do |t|
     t.string "content"
-    t.integer "session_id", null: false
+    t.bigint "session_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["session_id"], name: "index_questions_on_session_id"
