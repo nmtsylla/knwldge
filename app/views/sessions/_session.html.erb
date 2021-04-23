@@ -1,0 +1,12 @@
+<tr>
+  <th scope="row">
+    <%= link_to session.name, session_path(session), class: "dx-table-default-title" %>
+  </th>
+  <td>45</td>
+  <td><%= session.questions.count %></td>
+  <td class="dx-table-lastPost">
+    <div class="dx-table-default-info">
+      <p class="mb-0">presente par <a href="#">ndongoli</a><span class="dib"><%= session.created_at.to_s(:custom_date) %>,</span> <span class="dib">08:00 pm</span></p>
+    </div>
+  </td>
+</tr>

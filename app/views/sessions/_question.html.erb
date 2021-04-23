@@ -1,0 +1,15 @@
+<div class="dx-comment dx-topic-comment">
+  <div>
+
+    <div class="dx-comment-cont">
+      <div class="dx-comment-head">
+        <span class="text-3 fs-14 mnt-5">Question #<%= question.id %></span>
+      </div>
+      <div class="dx-comment-date"><%= question.created_at.to_s(:custom_datetime) %></div>
+      <div class="dx-comment-text">
+        <p class="mb-0"><%= question.content %></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="dx-separator"></div>

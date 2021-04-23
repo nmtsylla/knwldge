@@ -1,0 +1,21 @@
+      <div class="dx-blog-post">
+        <div class="dx-blog-post-box pt-30 pb-30">
+          <h2 class="h4 mnt-5 mb-8">Liste des sessions</h2>
+        </div>
+        <div class="dx-separator"></div>
+        <div class="table-responsive">
+          <table class="dx-table dx-table-default">
+            <thead>
+              <tr>
+                <th scope="col">Session</th>
+                <th scope="col">Categorie</th>
+                <th scope="col">Questions</th>
+                <th scope="col">#</th>
+              </tr>
+            </thead>
+            <tbody>
+              <%= render partial: "session", collection: @sessions, as: :session %>
+            </tbody>
+          </table>
+        </div>
+      </div>
