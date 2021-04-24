@@ -1,0 +1,32 @@
+<div class="dx-box-content">
+  <h2 class="h6 mnt-5 mnb-5">Sign up</h2>
+</div>
+<div class="dx-separator"></div>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<div class="dx-box-content">
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="dx-form-group">
+
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "form-control form-control-style-2"%>
+  </div>
+
+  <div class="dx-form-group">
+    <%= f.label :password%>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" , class: "form-control form-control-style-2"%>
+  </div>
+
+  <div class="dx-form-group">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control form-control-style-2" %>
+  </div>
+
+  <div class="actions mt-3">
+    <%= f.submit "Sign up", class:"dx-btn dx-btn-xl dx-btn-block"  %>
+  </div>
+  <%= render "devise/shared/links" %>
+  <% end %>
+</div>

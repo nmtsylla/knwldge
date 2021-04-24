@@ -50,17 +50,19 @@
        </ul>
        <ul class="dx-nav dx-nav-align-right">
          <% if !user_signed_in? %>
-
          <li class="dx-nav-item">
-           <a class="dx-nav-link" data-fancybox data-touch="false" data-close-existing="true" data-src="#login" href="javascript:;">Log In</a>
+           <%= link_to "Log in", new_user_session_path,  class: 'dx-nav-link' %>
          </li>
          <li class="dx-nav-item">
-           <span><a data-fancybox data-touch="false" data-close-existing="true" data-src="#signup" href="javascript:;" class="dx-btn dx-btn-md dx-btn-transparent">Sign Up</a></span>
+           <span>
+             <%= link_to "Sign up", new_user_registration_path,  class: 'dx-btn dx-btn-md dx-btn-transparent' %>
+             </a>
+           </span>
          </li>
          <% else %>
          <li class="dx-nav-item">
            <span>
-             <%= link_to "Sign out", destroy_user_session_path, class: 'dx-btn dx-btn-md dx-btn-transparent' %>
+             <%= link_to "Sign out", destroy_user_session_path, method: :delete,  class: 'dx-btn dx-btn-md dx-btn-transparent' %>
          </li>
          <% end %>
        </ul>
@@ -111,12 +113,19 @@
          </li>>
        </ul>
        <ul class="dx-nav dx-nav-align-right">
+         <% if !user_signed_in? %>
          <li>
-           <a data-fancybox data-touch="false" data-close-existing="true" data-src="#login" href="javascript:;">Log In</a>
+           <%= link_to "Log in", new_user_session_path %>
          </li>
          <li>
-           <span><a data-fancybox data-touch="false" data-close-existing="true" data-src="#signup" href="javascript:;" class="dx-btn dx-btn-md dx-btn-transparent">Sign Up</a></span>
+           <span><%= link_to "Sign up", new_user_registration_path,  class: 'dx-btn dx-btn-md dx-btn-transparent' %></span>
          </li>
+         <% else %>
+         <li class="dx-nav-item">
+           <span>
+             <%= link_to "Sign out", destroy_user_session_path, method: :delete,  class: 'dx-btn dx-btn-md dx-btn-transparent' %>
+         </li>
+         <% end %>
        </ul>
      </div>
    </div>
