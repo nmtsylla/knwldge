@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <title>Knwldge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700%7cMaven+Pro:400,500,700" %>
+  <%= stylesheet_link_tag "application", media: "all", 'data-turbo-track': "reload" %>
+  <%= javascript_pack_tag "application", 'data-turbo-track': "reload", 'defer': 'defer' %>
+</head>
+
+<body>
+
+  <%= render "shared/navbar" %>
+  <div class="dx-main">
+
+    <header class="dx-header dx-box-5">
+      <div class="container">
+        <div class="bg-image bg-image-parallax">
+          <div style="background-color: rgba(27, 27, 27, .8);"></div>
+        </div>
+        <div class="container mnb-8">
+          <h1 class="h4 mb-10 text-white text-center">Settings</h1>
+          <!-- START: Breadcrumbs -->
+          <ul class="dx-breadcrumbs text-center">
+            <li><a href="index.html">Home</a></li>
+            <li>Settings</li>
+          </ul>
+          <!-- END: Breadcrumbs -->
+        </div>
+      </div>
+    </header>
+    <div class="dx-box-5 pb-100 bg-grey-6">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 col-xl-7">
+            <div class="dx-box-decorated">
+              <p class="notice"><%= notice %></p>
+              <p class="alert"><%= alert %></p>
+              <%= yield %>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= render "shared/footer" %>
+  </div>
+</body>
+
+</html>

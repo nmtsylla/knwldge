@@ -49,6 +49,7 @@
 
        </ul>
        <ul class="dx-nav dx-nav-align-right">
+         <% if !user_signed_in? %>
 
          <li class="dx-nav-item">
            <a class="dx-nav-link" data-fancybox data-touch="false" data-close-existing="true" data-src="#login" href="javascript:;">Log In</a>
@@ -56,6 +57,12 @@
          <li class="dx-nav-item">
            <span><a data-fancybox data-touch="false" data-close-existing="true" data-src="#signup" href="javascript:;" class="dx-btn dx-btn-md dx-btn-transparent">Sign Up</a></span>
          </li>
+         <% else %>
+         <li class="dx-nav-item">
+           <span>
+             <%= link_to "Sign out", destroy_user_session_path, class: 'dx-btn dx-btn-md dx-btn-transparent' %>
+         </li>
+         <% end %>
        </ul>
      </div>
    </div>

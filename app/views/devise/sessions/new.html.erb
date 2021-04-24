@@ -1,0 +1,30 @@
+<div class="dx-box-content">
+  <h2 class="h6 mnt-5 mnb-5">Log in</h2>
+</div>
+<div class="dx-separator"></div>
+<%= form_for(resource, as: resource_name, url: user_session_path()) do |f| %>
+<div class="dx-box-content">
+  <div class="dx-form-group">
+    <%= f.label :email, class: "mnt-7" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-style-2" %>
+  </div>
+
+  <div class="dx-form-group">
+    <%= f.label :password , class: "mnt-7"%><br />
+    <%= f.password_field :password, autocomplete: "current-password", class: "form-control form-control-style-2"  %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+  <div class="dx-form-group">
+    <%= f.check_box :remember_me %>
+    <%= f.label :remember_me %>
+  </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Log in", class:"dx-btn dx-btn-xl dx-btn-block" %>
+  </div>
+  <% end %>
+</div>
+
+<%= render "devise/shared/links" %>
