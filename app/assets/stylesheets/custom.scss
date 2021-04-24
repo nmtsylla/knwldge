@@ -1,5 +1,9 @@
+@import "mixins";
 .questions-list {
   margin: 0 auto;
+  @include for-mobile-sm {
+    float: none;
+  }
 }
 .qestions-list-item {
   position: relative;
@@ -15,6 +19,17 @@
   width: 230px;
   height: 230px;
   float: left;
+  @include for-mobile-sm {
+    width: 240px;
+    height: 240px;
+    float: none;
+    margin: 0 auto 10px auto;
+  }
+  @include for-mobile {
+    width: 215px;
+    height: 215px;
+    margin: 10px;
+  }
 }
 
 .mode-grid .qestions-list-item .scroller {
@@ -30,7 +45,7 @@
 
 .mode-list .qestions-list-item {
   margin-bottom: 40px;
-  padding: 10px;
+  // padding: 10px;
 }
 
 .slideshow .qestions-list-item {
