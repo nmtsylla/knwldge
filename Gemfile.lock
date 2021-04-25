@@ -1,3 +1,67 @@
+GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: aa31845ed54c25eb2638d716bfddf59771b502aa
+  branch: master
+  specs:
+    faker (2.18.0)
+      i18n (>= 1.6, < 2)
+
+GIT
+  remote: https://github.com/rspec/rspec-core.git
+  revision: ea8554afd1a2b63677c6593059fa8f2476181deb
+  branch: main
+  specs:
+    rspec-core (3.11.0.pre)
+      rspec-support (= 3.11.0.pre)
+
+GIT
+  remote: https://github.com/rspec/rspec-expectations.git
+  revision: 040d1b0bba83031c9ae432fd3a4462fdd1cc74e7
+  branch: main
+  specs:
+    rspec-expectations (3.11.0.pre)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (= 3.11.0.pre)
+
+GIT
+  remote: https://github.com/rspec/rspec-its.git
+  revision: 4c4dade6ecced8b0b1859173a7e6e7798ee4a64f
+  branch: main
+  specs:
+    rspec-its (1.3.0)
+      rspec-core (>= 3.0.0)
+      rspec-expectations (>= 3.0.0)
+
+GIT
+  remote: https://github.com/rspec/rspec-mocks.git
+  revision: bce0cfb9d8fb61dd8b67caa382e32835875063dd
+  branch: main
+  specs:
+    rspec-mocks (3.11.0.pre)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (= 3.11.0.pre)
+
+GIT
+  remote: https://github.com/rspec/rspec-rails.git
+  revision: 8c9f3616a92c537418f3e6506dfb408d0802127c
+  branch: main
+  specs:
+    rspec-rails (5.1.0.pre)
+      actionpack (>= 5.2)
+      activesupport (>= 5.2)
+      railties (>= 5.2)
+      rspec-core (= 3.11.0.pre)
+      rspec-expectations (= 3.11.0.pre)
+      rspec-mocks (= 3.11.0.pre)
+      rspec-support (= 3.11.0.pre)
+
+GIT
+  remote: https://github.com/rspec/rspec-support.git
+  revision: d63133f478408c1d965e673b96ad10ef5a5d183f
+  branch: main
+  specs:
+    rspec-support (3.11.0.pre)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -92,11 +156,17 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    diff-lcs (1.4.4)
     dotenv (2.7.6)
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
       railties (>= 3.2)
     erubi (1.10.0)
+    factory_bot (5.0.2)
+      activesupport (>= 4.2.0)
+    factory_bot_rails (5.0.1)
+      factory_bot (~> 5.0.0)
+      railties (>= 4.2.0)
     ffi (1.15.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -277,6 +347,8 @@ DEPENDENCIES
   closure_tree
   devise
   dotenv-rails
+  factory_bot_rails
+  faker!
   hotwire-rails
   jbuilder (~> 2.7)
   listen (~> 3.3)
@@ -286,6 +358,12 @@ DEPENDENCIES
   rails (~> 6.1.1)
   rails_admin (~> 2.0)
   redis (~> 4.0)
+  rspec-core!
+  rspec-expectations!
+  rspec-its!
+  rspec-mocks!
+  rspec-rails!
+  rspec-support!
   sassc (~> 2.1.0)
   selenium-webdriver
   spring
