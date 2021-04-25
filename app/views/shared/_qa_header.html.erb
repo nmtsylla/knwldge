@@ -1,11 +1,7 @@
 <header class="dx-header dx-box-1">
   <div class="container">
     <div class="bg-image bg-image-parallax">
-      <img
-        src="https://via.placeholder.com/960/150"
-        class="jarallax-img"
-        alt=""
-      />
+      <img src="https://via.placeholder.com/960/150" class="jarallax-img" alt="" />
       <div style="background-color: rgba(27, 27, 27, 0.8)"></div>
     </div>
     <div class="row justify-content-center">
@@ -14,9 +10,12 @@
           Vous avez une question concernant la session:
         </h2>
         <h1 class="h2 mb-30 text-white text-center"><%= @session.name %>?</h1>
-        <%= turbo_frame_tag "question_form" do %> 
-          <%= render "questions/form", question: @question %> 
+        <%= turbo_frame_tag "question_form" do %>
+        <%= render "questions/form", question: @question %>
         <% end %>
+        <h6 class="mt-50 mnb-6 text-white text-center">
+          <%= link_to "Ou bien aller voir le resume de la session ?", resume_session_path(@session) %>
+        </h6>
       </div>
     </div>
   </div>
