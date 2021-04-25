@@ -29,3 +29,41 @@ Question.create(content: 'Bonjour j’avais entendu que toutes ces divergences d
 Question.create(content: 'Bismillah ziar. Ku nelaw gént am lu génn ci yow. Nga yeewu fajr xamoo ni gént nga nga julli tëddaat, so yewoo ci diggu bëccëk gi ndax da ngay fay julli fajr ga? Waaw leen góor', session: tasawuuf)
 Question.create(content: 'Nax jàpp di wax dafa haraam wala ñu sip ko ?', session: tasawuuf)
 Question.create(content: 'Bismillah dagn doon ladj ay leeral ci ngeneel xassida Sindidi', session: waxtaan)
+
+
+seedfile = File.open('db/seedes.rb', 'w')
+
+
+u = User.all
+
+u.each do |cat|
+  seedfile.write "User.create(#{cat.attributes})\n"
+end
+
+
+c = Category.all
+
+c.each do |cat|
+  seedfile.write "Category.create(#{cat.attributes})\n"
+end
+
+a = Article.all
+a.each do |cat|
+  seedfile.write "Article.create(#{cat.attributes})\n"
+end
+
+s = Session.all
+s.each do |cat|
+  seedfile.write "Session.create(#{cat.attributes})\n"
+end
+
+q = Question.all
+q.each do |cat|
+  seedfile.write "Question.create(#{cat.attributes})\n"
+end
+r = ActionText::RichText.all
+r.each do |cat|
+  seedfile.write "ActionText::RichText.create(#{cat.attributes})\n"
+end
+
+seedfile.close
