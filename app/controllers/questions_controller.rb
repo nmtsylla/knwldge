@@ -16,6 +16,7 @@ class QuestionsController < ApplicationController
 
   def create
     @question = @session.questions.create(question_params)
+    @question.user = current_user if user_signed_in?
     respond_to do |format|
       if @question.save
         format.html { redirect_to @session, notice: "Question was successfully created." }

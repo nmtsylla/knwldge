@@ -1,19 +1,17 @@
-<%= form_with(model: [question.session, question], local: true, html: {class:
-"dx-form dx-form-group-inputs"}, id: dom_id(question)) do |form| %> <% if
-question.errors.any? %>
-  <div id="error_explanation">
-    <h2>
-      <%= pluralize(question.errors.count, "error") %> prohibited this question
-      from being saved:
-    </h2>
+<%= form_with(model: [question.session, question], local: true, id: dom_id(question)) do |form| %>
 
-    <ul>
-      <% question.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-  <% end %> 
-  <%= form.text_field :content,class: "form-control", placeholder: "Veuillez la saisir ici..." %> 
-  <%= form.submit "Soumettre", class: "dx-btn dx-btn-lg"%> 
+<div>
+  <% if question.errors.any? %>
+
+  <h2 class="h6 mb-10 text-white text-center ">
+    <%= pluralize(question.errors.count, "error") %> prohibited this question
+    from being saved: <%= question.errors.full_messages.join(', ') %>
+  </h2>
+
+  <% end %>
+</div>
+<div class="dx-form dx-form-group-inputs">
+  <%= form.text_field :content,class: "form-control", placeholder: "Veuillez la saisir ici..." %>
+  <%= form.submit "Soumettre", class: "dx-btn dx-btn-lg"%>
+</div>
 <% end %>
