@@ -1,4 +1,9 @@
 FactoryBot.define do
+  factory :answer do
+    user { nil }
+    question { nil }
+  end
+
   factory :user do
     email { Faker::Internet.email }
     password { "testtest" }
