@@ -32,6 +32,8 @@ gem 'rails_admin', '~> 2.0'
 gem 'closure_tree'
 gem 'pg', '~>1.1.3'
 gem 'devise'
+gem 'redis-namespace'
+gem 'sidekiq'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

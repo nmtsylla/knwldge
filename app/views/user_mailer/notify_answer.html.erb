@@ -1,0 +1,38 @@
+<style>
+  blockquote {
+    margin: 0;
+  }
+
+  blockquote p {
+    padding: 15px;
+    background: #eee;
+    border-radius: 5px;
+  }
+
+  blockquote p::before {
+    content: '\201C';
+  }
+
+  blockquote p::after {
+    content: '\201D';
+  }
+</style>
+<h1>Hello <%= @answer.question.user.email %></h1>
+Vous avez pose la question suivante sur DahiraAbrar le <%= @answer.question.created_at.to_s(:custom_datetime) %> <br />
+<br />
+<blockquote>
+  <p><%= @answer.question.content %></p>
+</blockquote>
+<br /> <br />
+Voici la reponse qui y a ete apporte:
+<blockquote>
+  <p><%= @answer.content %></p>
+</blockquote>
+<% if @answer.documents %>
+<% @answer.documents.each_with_index do |doc, index| %>
+<%= link_to "Reference #{index+1}", url_for(doc) %> <br />
+<%end %>
+<%end%>
+<p>
+  Dahira Abrar
+</p>
